@@ -1,0 +1,212 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * O Arquivo — Editorial design system.
+ * Royal blue + canary yellow + vanilla. Playfair Display (serif) + Instrument Sans.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-royal: var(--royal);
+  --color-canary: var(--canary);
+  --color-vanilla: var(--vanilla);
+  --color-ink: var(--ink);
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Brand */
+  --royal: oklch(0.32 0.22 264);
+  --canary: oklch(0.92 0.22 100);
+  --vanilla: oklch(0.98 0.02 90);
+  --ink: oklch(0.18 0.04 265);
+
+  --background: var(--vanilla);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--royal);
+  --primary-foreground: var(--vanilla);
+  --secondary: var(--canary);
+  --secondary-foreground: var(--royal);
+  --muted: oklch(0.95 0.02 90);
+  --muted-foreground: oklch(0.45 0.04 265);
+  --accent: var(--canary);
+  --accent-foreground: var(--royal);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--vanilla);
+  --border: oklch(0.32 0.22 264 / 12%);
+  --input: oklch(0.32 0.22 264 / 15%);
+  --ring: var(--royal);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: var(--vanilla);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--royal);
+  --sidebar-primary-foreground: var(--vanilla);
+  --sidebar-accent: var(--canary);
+  --sidebar-accent-foreground: var(--royal);
+  --sidebar-border: oklch(0.32 0.22 264 / 12%);
+  --sidebar-ring: var(--royal);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-vanilla);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-canary);
+    color: var(--color-royal);
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* --- Editorial motion --- */
+@keyframes vz-glitch {
+  0%, 100% { transform: translate(0); text-shadow: 0 0 transparent; }
+  20% { transform: translate(-1.5px, 1px); text-shadow: 1.5px 0 var(--canary), -1.5px 0 var(--royal); }
+  40% { transform: translate(1.5px, -1px); text-shadow: -1.5px 0 var(--canary), 1.5px 0 var(--royal); }
+  60% { transform: translate(-1px, -1px); text-shadow: 1px 0 var(--canary), -1px 0 var(--royal); }
+  80% { transform: translate(1px, 1px); text-shadow: 0 0 transparent; }
+}
+
+@keyframes vz-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vz-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.glitch-hover:hover {
+  animation: vz-glitch 0.45s steps(2, end) infinite;
+}
+
+.reveal {
+  animation: vz-fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.marquee-track {
+  animation: vz-marquee 40s linear infinite;
+}
+
+.editorial-prose p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: oklch(0.22 0.04 265 / 0.88);
+}
+
+.editorial-prose p + p {
+  margin-top: 1.5rem;
+}
+
+.drop-cap::first-letter {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: 5.5rem;
+  line-height: 0.85;
+  float: left;
+  margin: 0.35rem 0.75rem 0 0;
+  color: var(--royal);
+}
